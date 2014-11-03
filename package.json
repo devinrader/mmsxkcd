@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "xml2js": "*",
+    "request": "*",
+    "twilio": "*",
+    "firebase": "*"
+  }
+}
