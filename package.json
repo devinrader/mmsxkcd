@@ -6,5 +6,28 @@
     "request": "*",
     "twilio": "*",
     "firebase": "*"
-  }
+  },
+  "name": "mmsxkcd",
+  "version": "1.0.0",
+  "description": "A simple example of using Twilio MMS to send XKCD comics to your phone and to have new comics automatically pushed to your phone.",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devinrader/mmsxkcd.git"
+  },
+  "keywords": [
+    "Twilio",
+    "XKCD",
+    "Firebase"
+  ],
+  "author": "Devin Rader",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devinrader/mmsxkcd/issues"
+  },
+  "homepage": "https://github.com/devinrader/mmsxkcd"
 }
