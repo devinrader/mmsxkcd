@@ -11,7 +11,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-var subscribersRef = new Firebase(process.end.FIREBASE_URL);
+var subscribersRef = new Firebase(process.env.FIREBASE_URL);
 subscribersRef.on('child_added', function(snapshot) {
      numbers.push( snapshot.val() );
      console.log( 'Added number ' + snapshot.val() );
