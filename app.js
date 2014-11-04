@@ -52,7 +52,7 @@ app.post("/process", function(req, res) {
      var twiml = new twilio.TwimlResponse();
      res.type('text/xml');
 
-     if ( !parseInt(body) ) {
+     if ( parseInt(body) ) {
           request('http://xkcd.com/' + body + '/info.0.json', function (error, response, json) {
 
                if (!error && response.statusCode == 200) {
