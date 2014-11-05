@@ -1,9 +1,9 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var parseString = require('xml2js').parseString;
-var request = require('request');
-var twilio = require('twilio');
-var Firebase = require('firebase');
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    parseString = require('xml2js').parseString,
+    request = require('request'),
+    twilio = require('twilio'),
+    Firebase = require('firebase');
 
 var numbers = [];
 
