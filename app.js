@@ -17,28 +17,32 @@ subscribersRef.on('child_added', function(snapshot) {
      console.log( 'Added number ' + snapshot.val() );
      });
 
-app.post('/', function(req, res){
+app.post('/relay', function(req, res){
 	
      var client = new twilio.RestClient(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);   
 
-     for(var i=0; i < req.body.items.length; i++) {
+     req.body.items.forEach(function(item) {
 
           var item = req.body.items[i];
 
           parseString(item.summary, function (err, result) {
 
-               var title = result.img.$.title;
-               var src = result.img.$.src;
+               if (!err) {
+                    var title = result.img.$.title;
+                    var src = result.img.$.src;
 
-               for(var j=0;j < numbers.length; j++) {
-                    client.sendMessage({
-                         to: numbers[j], 
-                         from: process.env.TWILIO_PHONE_NUMBER, 
-                         body: item.title + ':\r\n' + title + '\r\n' + item.permalinkUrl, 
-                         mediaUrl: src
-                         }, function( err, message ) {
-                              console.log( message.sid );
-                    });
+                    for(var j=0;j < numbers.length; j++) {
+                         client.sendMessage({
+                              to: numbers[j], 
+                              from: process.env.TWILIO_PHONE_NUMBER, 
+                              body: item.title + ':\r\n' + title + '\r\n' + item.permalinkUrl, 
+                              mediaUrl: src
+                              }, function( err, message ) {
+                                   console.log( message.sid );
+                         });
+                    }
+               } else {
+                    console.log(err);
                }
           });
      }
