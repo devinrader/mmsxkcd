@@ -45,7 +45,7 @@ app.post('/relay', function(req, res){
                     console.log(err);
                }
           });
-     }
+     });
      res.status(200).send();  
 });
 
